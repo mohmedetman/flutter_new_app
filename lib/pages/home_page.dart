@@ -54,7 +54,15 @@ class HomePage extends StatelessWidget {
                   height: 16,
                  ),
                ),
-               SliverToBoxAdapter(child:Expanded(child: list_news())  ,),
+                   SliverList(
+            delegate: SliverChildBuilderDelegate(
+              (BuildContext context, int index) {
+                return list_news();
+              },
+              childCount: 50, // Number of items in the list
+            ),
+            )
+               //SliverToBoxAdapter(child:Expanded(child: list_news())  ,),
           ]),
         ),
         // 
